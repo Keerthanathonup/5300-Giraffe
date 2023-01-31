@@ -110,11 +110,11 @@ void HeapFile::open(void){
     this->(this->block_sz) = this->stat['re_len'];
 }
 
-void HeapFiel::create(void){
+void HeapFile::create(void){
     db_open(db->create,db->EXCL);
     this->put(this->get_new());    
 }
-void HeapFiel::close(void){
+void HeapFile::close(void){
     this->write_lock = 1;
     this->end_write();
     if(!this->closed){
@@ -124,13 +124,13 @@ void HeapFiel::close(void){
     }
 }
 
-SlottedPage* HeapFiel::get_new(void){
+SlottedPage* HeapFile::get_new(void){
     this->last +=1;
     SlottedPage *b = new SlottedPage(this->block_sz, this->block_id=this->last)
     return b;
 }
 
-SlottedPage* HeapFiel::get(BlockID block_id){
+SlottedPage* HeapFile::get(BlockID block_id){
     int myqueue_size = write_queue.size();
     for(int i = 0; i < myqueue_size; i++) {  
       if(block_id==write_queue[i]){
@@ -140,12 +140,12 @@ SlottedPage* HeapFiel::get(BlockID block_id){
     SlottedPage *SLO = SlottedPage(this->block_sz,this->db->get(block_id),block_id);
    } 
 
-void HeapFiel::put(DbBlock *block){
+void HeapFile::put(DbBlock *block){
     ++this->write_lock;
     this->write_queue[this->block_id].push(block);
     this->end_write
 }
-BlockIDs* HeapFiel::block_ids(){
+BlockIDs* HeapFile::block_ids(){
     RecordID * a = new RecordIDs();
     for(int i = 1;i<(this->last +1);i++){
             a.add()
