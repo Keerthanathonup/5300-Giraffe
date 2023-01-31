@@ -1,6 +1,11 @@
 # 5300-Giraffe
 DB Relation Manager project for CPSC5300 at Seattle U, Winter 2023, Project Giraffe
 
+For further information and description please see "Milestone" Video for the Handoff
+and hit "view raw". 
+
+A Brief examplanation is provided below:
+
 The milestone 1 is composed of two seperate parts:
   1) Making DB_ENV
   2) Parsing the SQL command using SQL Parser.
@@ -22,3 +27,4 @@ The milestone 1 is composed of two seperate parts:
   heap_storage.h file. Both files are uploaded via git. Each
   purpose of the methods within each class are described 
   briefly in the Milestone 2 page in canvas. 
+
