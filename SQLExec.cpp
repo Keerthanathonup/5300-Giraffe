@@ -1,6 +1,6 @@
 /**
  * @file SQLExec.cpp - implementation of SQLExec class
- * @author Kevin Lundeen
+ * @author Kevin Lundeen,Jen-Chieh & Nole
  * @see "Seattle University, CPSC5300, Winter 2023"
  */
 #include "SQLExec.h"
@@ -153,7 +153,7 @@ QueryResult *SQLExec::create(const CreateStatement *statement) {
      return new QueryResult("created " + tableName);
 }
 
-// DROP ...
+// DROP Table
 QueryResult *SQLExec::drop(const DropStatement *statement) {
    // return new QueryResult("not implemented"); // FIXME
      if (statement->type != DropStatement::kTable) {
